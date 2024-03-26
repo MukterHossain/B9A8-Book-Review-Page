@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import ListedBooks from './pages/ListedBooks.jsx'
 import Layout from './component/Layout.jsx'
 import PagesRead from './pages/PagesRead.jsx'
+// import Blogs from './component/Blogs.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,9 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
+        loader: ()=>fetch("/blogs.json"),
         element:<Home></Home>,
+        
       },
       {
         path:'/listed',
