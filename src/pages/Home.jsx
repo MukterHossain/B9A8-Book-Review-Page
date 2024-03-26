@@ -1,12 +1,13 @@
+import Hero from "../component/Hero";
 
 
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="mx-20 mt-12">
             
-            <h2>Home Page</h2>
+            <Hero></Hero>
             
         </div>
     );
