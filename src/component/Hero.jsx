@@ -9,7 +9,6 @@ const Hero = () => {
                 <div className="w-1/2">
                     <h1 className="text-[56px] font-playfair font-bold">Books to freshen up your bookshelf</h1>
                     <NavLink to='/listed' className="btn mr-2 bg-[#23be0a] mt-8 text-white font-work text-[20px]">View The List</NavLink>
-                    {/* <NavLink  className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Pages to Read</NavLink> */}
                 </div>
             </div>
         </div>
