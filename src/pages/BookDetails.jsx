@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import placeholderImage from '../assets/404.jpg'
@@ -13,21 +12,40 @@ const BookDetails = () => {
         setBook(singleBook)
     }, [bookId, books])
 
-    console.log(book)
-    const { image, tag, bookName, author, category, rating  } = book;
+    // console.log(book)
+    const { image, tag, bookName, author,review, category, totalPages, publisher, yearOfPublishing, rating } = book;
+
     return (
-        <div className="mx-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div>
-                    <img src={image || placeholderImage}  alt="" />
+        <div className="mx-24 my-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="bg-gray-100 rounded-2xl flex justify-center items-center">
+                    <img src={image || placeholderImage} alt="" />
                 </div>
-                <div>
-                    <h2> {bookName}</h2>
-                    <p>By: {author}</p>
+                <div className="">
+                    <div>
+                        <h2 className="text-[40px] text-[#131313] font-playfair font-bold"> {bookName}</h2>
+                        <p className="text-xl text-[#131313] font-work py-3">By : <span >{author}</span></p>
+                        <hr />
+                        <p className="text-xl text-[#131313] font-work py-3">{category}</p>
+                        <hr />
+                        <p className="text-xl text-[#131313] font-work py-3 opacity-60"><span className="text-[#131313] font-bold">Review :</span> {review}</p>
+                    </div>
+                    <div className="flex items-center py-5">
+                        <p className="text-[#131313] text-[16px] font-work font-bold mr-2">Tag</p>
+                        <p className="text-green-600 mr-3 font-bold bg-gray-100 px-4 py-1 rounded-lg">{tag}</p>
+                        <p className="text-green-600 mr-3 font-bold bg-gray-100 px-4 py-1 rounded-lg">{tag}</p>
+                    </div>
                     <hr />
-                    <p>{category}</p>
-                    <hr />
-                    <p>{rating}</p>
+                    <div>
+                        <p>Number of Pages: {totalPages}</p>
+                        <p>Publisher: {publisher}</p>
+                        <p>Year of Publishing: {yearOfPublishing}</p>
+                        <p>Rating: {rating}</p>
+                    </div>
+                    <div className="mt-4">
+                        <button className="btn px-6 bg-green-600 text-white hover:bg-gray-100 hover:text-black mr-4">Read</button>
+                        <button className="btn px-6 bg-[#50b1c9] text-white hover:bg-gray-100 hover:text-black">Wishlist</button>
+                    </div>
                 </div>
             </div>
         </div>
