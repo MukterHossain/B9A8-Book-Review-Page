@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import placeholderImage from '../assets/404.jpg'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveReadPage } from "../utility/LocalStorage";
 
 
 const BookDetails = () => {
@@ -14,6 +17,11 @@ const BookDetails = () => {
 
     // console.log(book)
     const { image, tag, bookName, author,review, category, totalPages, publisher, yearOfPublishing, rating } = book;
+
+    const handleBookRead = ()=>{
+        saveReadPage(bookId)
+        toast('you have read')
+    }
 
     return (
         <div className="mx-24 my-12">
@@ -32,8 +40,12 @@ const BookDetails = () => {
                     </div>
                     <div className="flex items-center py-5">
                         <p className="text-[#131313] text-[16px] font-work font-bold mr-2">Tag</p>
-                        <p className="text-green-600 mr-3 font-bold bg-gray-100 px-4 py-1 rounded-lg">{tag}</p>
-                        <p className="text-green-600 mr-3 font-bold bg-gray-100 px-4 py-1 rounded-lg">{tag}</p>
+                        {
+                            tag?.map(tags =>( <a  key={tags} className="text-green-600 mr-3 font-bold bg-gray-100 px-4 py-1 rounded-lg">#{tags}</a>
+
+                            ))
+                        }
+                       
                     </div>
                     <hr />
                     <div>
@@ -43,11 +55,12 @@ const BookDetails = () => {
                         <p>Rating: {rating}</p>
                     </div>
                     <div className="mt-4">
-                        <button className="btn px-6 bg-green-600 text-white hover:bg-gray-100 hover:text-black mr-4">Read</button>
+                        <button onClick={handleBookRead} className="btn px-6 bg-green-600 text-white hover:bg-gray-100 hover:text-black mr-4">Read</button>
                         <button className="btn px-6 bg-[#50b1c9] text-white hover:bg-gray-100 hover:text-black">Wishlist</button>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

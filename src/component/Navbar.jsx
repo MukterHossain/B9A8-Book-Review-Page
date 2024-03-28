@@ -14,15 +14,19 @@ const Navbar = () => {
                         <NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Home</NavLink>
                         <NavLink to='/listed' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Listed Books</NavLink>
                         <NavLink to='/reading' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Pages to Read</NavLink>
+                        <NavLink to='/ebook' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>E-Book</NavLink>
+                        <NavLink to='/fair' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Book Fair</NavLink>
                     </ul>
                 </div>
                 <a className="text-3xl text-[#131313] font-work font-bold">Book Vibe</a>
             </div>
             <div className="navbar-center flex-none gap-8 hidden lg:flex">
                 <ul className="menu menu-horizontal space-x-5 text-[18px] text-[#131313] font-work px-1">
-                    <NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Home</NavLink>
+                    <NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>Home</NavLink>
                     <NavLink to='/listed' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Listed Books</NavLink>
                     <NavLink to='/reading' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Pages to Read</NavLink>
+                    <NavLink to='/ebook' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>E-Book</NavLink>
+                    <NavLink to='/fair' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>Book Fair</NavLink>
                 </ul>
             </div>
             <div className="navbar-end">

@@ -8,6 +8,10 @@ import Layout from './component/Layout.jsx'
 import PagesRead from './pages/PagesRead.jsx'
 import BookDetails from './pages/BookDetails.jsx'
 import ErrorPage from './component/ErrorPage.jsx'
+import ReadBooks from './component/ReadBooks.jsx'
+import WishList from './component/WishList.jsx'
+import EBook from './pages/EBook.jsx'
+import BookFair from './pages/BookFair.jsx'
 // import Blogs from './component/Blogs.jsx'
 
 const router = createBrowserRouter([
@@ -30,10 +34,30 @@ const router = createBrowserRouter([
       {
         path:'/listed',
         element:<ListedBooks></ListedBooks>,
+        children:[
+          {
+            index:true,
+            element:<ReadBooks></ReadBooks>,
+            loader: ()=>fetch('../blogs.json'),
+          },
+          {
+            path:'wishlist',
+            element: <WishList></WishList>
+          }
+        ]
       },
       {
         path:'/reading',
         element:<PagesRead></PagesRead>
+      },
+      {
+        path:'/ebook',
+        element:<EBook></EBook>,
+        loader: ()=>fetch('/books.json'),
+      },
+      {
+        path:'/fair',
+        element:<BookFair></BookFair>
       }
     ]
   }
