@@ -1,4 +1,5 @@
 
+
 const getStoredReadPage  = () =>{
     const storedReadPage = localStorage.getItem('read-page');
     if(storedReadPage){
@@ -15,4 +16,11 @@ const saveReadPage = bookId =>{
         localStorage.setItem('read-page', JSON.stringify(storedReadPages))
     }
 }
+
+
+
+
 export {getStoredReadPage, saveReadPage}
+
+
+

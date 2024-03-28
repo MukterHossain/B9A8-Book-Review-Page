@@ -20,7 +20,7 @@ const BookDetails = () => {
 
     const handleBookRead = ()=>{
         saveReadPage(bookId)
-        toast('you have read')
+        toast('It already rea')
     }
 
     return (
@@ -56,7 +56,7 @@ const BookDetails = () => {
                     </div>
                     <div className="mt-4">
                         <button onClick={handleBookRead} className="btn px-6 bg-green-600 text-white hover:bg-gray-100 hover:text-black mr-4">Read</button>
-                        <button className="btn px-6 bg-[#50b1c9] text-white hover:bg-gray-100 hover:text-black">Wishlist</button>
+                        <button onClick={handleBookRead}  className="btn px-6 bg-[#50b1c9] text-white hover:bg-gray-100 hover:text-black">Wishlist</button>
                     </div>
                 </div>
             </div>

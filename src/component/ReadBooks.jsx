@@ -5,7 +5,6 @@ import { getStoredReadPage } from "../utility/LocalStorage";
 
 const ReadBooks = () => {
     const reads = useLoaderData();
-    console.log(reads)
     useEffect(()=>{
         const storedReadId = getStoredReadPage();
         if(reads.length > 0){

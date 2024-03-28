@@ -3,7 +3,6 @@ import BookCard from "./BookCard";
 
 const Books = () => {
     const blogs = useLoaderData();
-    console.log(blogs)
     return (
         <div>
             <section className=" dark:text-gray-800">
